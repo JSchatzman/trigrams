@@ -3,7 +3,10 @@
 import pytest
 
 READ_EVAL_TABLE = [
-    ['testtext.txt', ['Do', 'the', 'voodoo', 'that', 'you', 'do', 'so', 'well.']]
+    [
+        'testtext.txt',
+        ['Do', 'the', 'voodoo', 'that', 'you', 'do', 'so', 'well.']
+    ]
 ]
 
 
