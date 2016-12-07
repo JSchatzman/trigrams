@@ -3,7 +3,7 @@
 import pytest
 
 READ_EVAL_TABLE = [
-    ["I may I wish I may I wish I might", 3, ["I", "wish", "may"]]
+    ["I may I wish I may I wish I might", 3, ["I", "wish", "may"]],
     ["Do that voodoo that you do so well.", 4, ["voodoo", "that", "you", "do"]]
 ]
 
