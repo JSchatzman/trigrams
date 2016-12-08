@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 import io
 import random
+import sys
 
 
 def read_file(input_file):
@@ -46,4 +47,4 @@ def main(input_file, word_length):
 
 
 if __name__ == '__main__':
-    print (main('sampletext.txt', 50))
+    print (main(sys.argv[1], int(sys.argv[2])))
