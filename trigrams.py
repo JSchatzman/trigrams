@@ -47,5 +47,4 @@ def main(input_file, word_length):
 
 
 if __name__ == '__main__':
-    
     print (main(sys.argv[1], int(sys.argv[2])))
