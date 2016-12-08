@@ -48,7 +48,7 @@ def test_create_dict(word_list, result):
 
 
 # @pytest.mark.parametrize('word_list, result', DICT_TABLE)
-# def test_create_dict(word_list, result):
-#     """Test to ensure textfile is read."""
-#     from trigrams import create_dict
-#     assert create_dict(word_list) == result
+def test_main():
+    """Test to ensure textfile is read."""
+    from trigrams import main
+    assert len(main(word_list)) == 200
