@@ -1,4 +1,4 @@
-"""Tests for trigrams."""
+"""Test trigrams module for reading, splitting and output file."""
 
 import pytest
 
@@ -35,21 +35,23 @@ DICT_TABLE = [
 
 
 def test_read_file():
-    """Test to ensure function is reading text."""
+    """Test to ensure read_file function is reading text."""
     from trigrams import read_file
-    assert read_file('testtext.txt') == ['Do', 'the', 'voodoo', 'that', 'you', 'do', 'so', 'well.']
+    assert read_file('testtext.txt') == [
+        'Do', 'the', 'voodoo', 'that', 'you', 'do', 'so', 'well.'
+    ]
 
 
 @pytest.mark.parametrize('word_list, result', DICT_TABLE)
 def test_create_dict(word_list, result):
-    """Test to ensure textfile is read."""
+    """Check create_dict is populating a dictionary from sample text."""
     from trigrams import create_dict
     assert create_dict(word_list) == result
 
 
 # @pytest.mark.parametrize('word_list, result', DICT_TABLE)
 def test_main():
-    """Test to ensure textfile is read."""
+    """Test to ensure main function is producing correct length text."""
     from trigrams import main
     output = main('rando.txt', 200)
     assert len(output.split()) == 200
