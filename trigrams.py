@@ -7,7 +7,7 @@ import sys
 
 
 def read_file(input_file):
-    """Read input file and return list of words in order."""
+    """Read input file and return list of words in original order."""
     f = io.open(input_file, encoding='utf-8')
     text = f.read()
     f.close()
