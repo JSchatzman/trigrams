@@ -7,7 +7,7 @@ import sys
 
 
 def read_file(input_file):
-    """Read input file and return list of words in order."""
+    """Read input file and return list of words in original order."""
     f = io.open(input_file, encoding='utf-8')
     text = f.read()
     f.close()
@@ -17,6 +17,8 @@ def read_file(input_file):
 def create_dict(input_file):
     """Create a dictionary with word pair keys."""
     input_list = read_file(input_file)
+    if len(input_list) < 3:
+        return 'Insufficient Text'
     trigram_dict = {}
     for i in range(len(input_list) - 2):
         new_key = input_list[i] + ' ' + input_list[i + 1]
@@ -30,6 +32,8 @@ def create_dict(input_file):
 def main(input_file, word_length):
     """Output the trigram based using the input dictionary of lists."""
     trigram_dict = create_dict(input_file)
+    if trigram_dict == 'Insufficient Text':
+         return 'Insufficient Text'
     output = []
     word_pair_list = list(trigram_dict.keys())
     word_pair = random.choice(word_pair_list)
