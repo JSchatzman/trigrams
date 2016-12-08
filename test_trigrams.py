@@ -51,4 +51,5 @@ def test_create_dict(word_list, result):
 def test_main():
     """Test to ensure textfile is read."""
     from trigrams import main
-    assert len(main(word_list)) == 200
+    output = main('rando.txt', 200)
+    assert len(output.split()) == 200
