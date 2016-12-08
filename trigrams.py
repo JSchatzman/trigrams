@@ -27,28 +27,23 @@ def create_dict(input_file):
 
 
 def main(input_file, word_length):
-    """Create random string with maxiumum length based on input dict."""
+    """Output the trigram based using the input dictionary of lists."""
     trigram_dict = create_dict(input_file)
     output = []
     word_pair_list = list(trigram_dict.keys())
     word_pair = random.choice(word_pair_list)
     output.extend(word_pair.split(' '))
     third_word = random.choice(trigram_dict[word_pair])
-    output.append(third_word)
-    trigram_dict[word_pair].remove(third_word)
+    word_pair = ' '.join(output[-2:])
     while len(output) < word_length + 3:
-        word_pair = ' '.join(output[-2:])
         if word_pair in word_pair_list:
-            if trigram_dict[word_pair]:
-                third_word = random.choice(trigram_dict[word_pair])
-                output.append(third_word)
-            else:
-                return ' '.join(output)
-            trigram_dict[word_pair].remove(third_word)
+            third_word = random.choice(trigram_dict[word_pair])
+            output.append(third_word)
+            word_pair = ' '.join(output[-2:])
         else:
-            return ' '.join(output)
-    return ' '.join(output[0:word_length + 1])
+            word_pair = random.choice(word_pair_list)
+    return ' '.join(output[0:word_length])
 
 
 if __name__ == '__main__':
-    print (main('sampletext.txt', 200))
+    print (main('sampletext.txt', 50))
